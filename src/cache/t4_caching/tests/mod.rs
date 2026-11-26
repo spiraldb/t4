@@ -85,6 +85,7 @@ impl CountingStore {
             piece
         });
         GetResult {
+            extensions: Default::default(),
             payload: GetResultPayload::Stream(body.boxed()),
             meta,
             range,
@@ -131,6 +132,7 @@ impl CountingStore {
             }
         });
         Ok(GetResult {
+            extensions: Default::default(),
             payload: GetResultPayload::Stream(body.boxed()),
             meta,
             range,

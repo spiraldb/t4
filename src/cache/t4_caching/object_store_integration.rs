@@ -26,6 +26,7 @@ impl T4Caching {
 
     fn answer(meta: &ObjectMeta, range: Range<u64>, bytes: Bytes) -> GetResult {
         GetResult {
+            extensions: Default::default(),
             payload: GetResultPayload::Stream(stream::once(ready(Ok(bytes))).boxed()),
             meta: meta.clone(),
             range,
